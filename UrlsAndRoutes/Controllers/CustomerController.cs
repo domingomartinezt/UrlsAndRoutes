@@ -2,8 +2,8 @@
 using UrlsAndRoutes.Models;
 
 namespace UrlsAndRoutes.Controllers {
+    [Route("app/[controller]/actions/[action]/{id?}")]
     public class CustomerController : Controller {
-        [Route("[controller]/MyAction")]
         public ViewResult Index() => View("Result",
             new Result {
                 Controller = nameof(CustomerController),
@@ -16,7 +16,6 @@ namespace UrlsAndRoutes.Controllers {
                 Action = nameof(List)
             };
             r.Data["Id"] = id ?? "<no value>";
-            r.Data["carchall"] = RouteData.Values["catchall"];
             return View("Result", r);
         }
     }
