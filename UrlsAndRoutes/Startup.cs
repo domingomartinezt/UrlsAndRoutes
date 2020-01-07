@@ -24,7 +24,7 @@ namespace UrlsAndRoutes {
             app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "areas",
-                    template: "{area:exist}/{controller=Home}/{action=Index}");
+                    template: "{area:exists}/{controller=Home}/{action=Index}");
 
                 routes.Routes.Add(new LegacyRoute(
                     app.ApplicationServices,
